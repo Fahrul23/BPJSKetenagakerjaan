@@ -58,7 +58,17 @@ class UserSeeder extends Seeder
         //=========================================
 
 
-        // Akun default
+        
+        // Akun Admin
+
+        $user = User::create([
+            'name' => 'Fahrul Ihsan',
+            'email' => 'fahrul@example.com',
+            'password' => Hash::make("fahrul123"),
+            'role' => 'admin',
+        ]);
+
+        // Akun User
         $user = User::create([
             'name' => 'User',
             'email' => 'user@example.com',
