@@ -1,0 +1,10 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/custom.css": "/css/custom.css",
+    "/js/image-uploader.js": "/js/image-uploader.js",
+    "/dist/owl.carousel": "/dist/owl.carousel",
+    "/dist/chart.js": "/dist/chart.js",
+    "/dist/datatable/datatable.net": "/dist/datatable/datatable.net",
+    "/dist/datatable/datatables.net-bs4": "/dist/datatable/datatables.net-bs4"
+}

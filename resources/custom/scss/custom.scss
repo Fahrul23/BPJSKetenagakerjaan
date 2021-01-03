@@ -1,0 +1,335 @@
+// =============================================
+
+/**
+ *  Table of content
+ *  
+ *  1. Dashboard custom
+ *  2. Sub menu navigation
+ *  3. Image upload
+ *  4. Grid sistem card
+ *  5. Modal custom
+ *  
+ */
+
+// =============================================
+
+/**
+ *  . custom
+ *  
+ *  Custom override elemen yang sudah
+ *  ada di design.
+ */
+
+.card {
+
+    .card-header-action {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .btn-custom {
+            width: 32px; 
+            height: 32px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            margin-left: 10px;
+        }
+
+    }
+    
+}
+
+/**
+ *  1. Dasboard custom
+ *  
+ *  Tampilan custom untuk dashboard
+ *  
+ */
+.card-dashboard-new-item {
+    max-height: 456px;
+    height: 100%;
+
+    .media:hover {
+
+        .media-footer {
+            display: block;
+        }
+    }
+
+    .media-footer {
+        display: none;
+
+        .btn {
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 576px){
+            display: block;
+        }
+
+        @media screen and (max-width: 768px){
+            display: block;
+        }
+    }
+
+}
+
+.card-dashboard-stats-item {
+
+    .card-action {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fc544b;
+        color: #eeeeee;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        .card-action {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.notif {
+    display: flex;
+    flex-direction: row;
+
+    .col-6 {
+        transition: .3s all ease-out;
+        cursor: pointer;
+    }
+
+    .col-6:first-child {
+        border-right: 1px solid #f2f2f2;
+    }
+
+    .col-6:hover {
+        background-color: #f7f7f7;
+    }
+
+    .notif-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-decoration: none;
+
+        .notif-icon {
+            position: relative;
+
+            span {
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                border: 2px solid white;
+                // top: 7px;
+                // right: 5px;
+                top: 0;
+                right: 0;
+                line-height: 18px;
+            }
+        }
+
+        span {
+            font-size: .75rem;
+            text-align: center;
+            line-height: normal;
+            color: rgb(43, 43, 43);
+        }
+
+        i {
+            background-color: #6777ef;
+            color: #fff;
+            font-size: 2rem;
+            padding: 20px 22px;
+            border-radius: 50px;
+        }
+    }
+}
+
+
+/**
+ *  2. Sub menu navigation
+ *  
+ *  Custom elemen navigasi untuk tampilan
+ *  mobile dan desktop
+ *  
+ */
+.scroller {
+    display: flex;
+    overflow: hidden;
+}
+
+
+/**
+ *  3. Image upload
+ *  
+ *  custom element untuk image upload
+ *  
+ */
+.img-upload {
+    width: 100%;
+    height: 180px !important;
+    padding: 15px !important;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+
+    input { display: none; }
+    
+    .img {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #6777ef;
+        border-radius: 5px;
+
+        .text {
+            
+            color: #6777ef;
+
+            i { 
+                margin-left: 3px;
+                font-size: 1.5rem;
+            }
+
+            &.current {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                background-color: #ffffffd0;
+            }
+        }
+        
+        &:hover {
+            .current {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    &:hover { background-color: #f7f7f7; }
+}
+
+
+/**
+ *  4. Grid sistem card
+ *
+ *  Grid sistem untuk model data card  
+ *
+ */
+
+.grid-custom {
+
+    .grid-header {
+        margin-bottom: 20px;
+    }
+    
+    .grid-body {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 8px;
+        row-gap: 8px;
+
+        .grid-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-decoration: none;
+            color: #161616;
+            padding: 15px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    
+            img { width: 100%; border-radius: 5px; }
+    
+            h4 {
+                margin-top: 10px;
+                font-size: 1.1rem;
+                color: #6777ef;
+            }
+
+            .grid-badge { margin: 0; margin-top: auto; }
+    
+            &:hover { border-color: #6777ef; box-shadow: 0px 0px 5px 2px #c0c0c033; }
+
+            
+        }
+
+        .empty-msg {
+            grid-column: 1 / span 5;
+        }
+    
+        @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(4, 1fr);
+            .empty-msg {
+                grid-column: 1 / span 4;
+            }
+        }
+    
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+            .empty-msg {
+                grid-column: 1 / span 3;
+            }
+        }
+    
+        @media screen and (max-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+            .empty-msg {
+                grid-column: 1 / span 2;
+            }
+        }
+    }
+
+    .grid-footer {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+        
+        * { text-align: center;}
+
+        .pagination {
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+
+            .page-link {
+                margin: 5px 3px;
+            }
+        }
+    }
+
+}
+
+/**
+ *  5. Modal custom
+ *  
+ *  Custom elemen modal untuk halaman
+ *  detail barang pinjam.
+ */
